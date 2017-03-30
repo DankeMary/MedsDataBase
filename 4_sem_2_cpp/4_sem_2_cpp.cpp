@@ -66,8 +66,8 @@ private:
 	double price;
 	date arrival;
 	int shelfLife;
-protected:
-		
+/*protected:*/
+public:
 	void getData()
 	{
 		cout << "Введите номер аптеки: ";
@@ -91,7 +91,7 @@ protected:
 		cout << "Введите срок хранения: ";
 		cin >> shelfLife;
 	}
-public:
+
 	Med() {
 		farmNum = 0;
 		name = "";
@@ -116,8 +116,49 @@ public:
 		shelfLife = lifeTag;
 	}
 };
+
+void printMenu()
+{
+	int option = 0;
+	Med med;
+	while (option != 10)
+	{
+		cout << "\n";
+		cout << "\n1. Добавить информацию\n";
+		cout << "2. Выполнить поиск по номеру аптеки\n";
+		cout << "3. Выполнить поиск по наименованию препарата\n";
+		cout << "4. Выполнить поиск по дате поступления\n";
+		/*cout << "5. Преобразование с transform\n";
+		cout << "6. Преобразование с for_each\n";
+		cout << "7. Вычислить сумму элементов\n";
+		cout << "8. Вычислить среднее арифметическое элементов\n";
+		cout << "9. Вывести результат\n";*/
+		cout << "10. Выход\n";
+		cout << "\n";
+
+		cin >> option;
+
+		switch (option) {
+		case 1:
+			med.getData();
+			break;
+		case 2: 
+			
+			break;
+		case 3: 
+			
+			break;
+		case 10: break;
+		default: cout << "Ошибка! Повторите ввод" << endl;
+		}
+	}
+
+}
+
 int main()
 {
+	setlocale(LC_ALL, "Russian");
+	printMenu();
     return 0;
 }
 
