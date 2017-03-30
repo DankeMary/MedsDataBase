@@ -24,6 +24,7 @@ struct date {
 	int month;
 	int year;
 };
+
 date getDate() {
 	date d;
 	d.day = 0;
@@ -54,7 +55,9 @@ date getDate() {
 	}
 	return d;
 }
-class Med {
+
+class Med 
+{
 private:
 	int farmNum;
 	string name;
@@ -64,9 +67,30 @@ private:
 	date arrival;
 	int shelfLife;
 protected:
-	
-	
-	
+		
+	void getData()
+	{
+		cout << "Введите номер аптеки: ";
+		cin >> farmNum;
+
+		cout << "Введите название лекарства: ";
+		cin >> name;
+
+		cout << "Введите количество упаковок ";
+		cin >> quantity;
+
+		cout << "Имеется ли лекарство в наличии? 1 - да, 0 - нет : ";
+		cin >> available;
+		
+		cout << "Введите стоимость 1 упаковки: ";
+		cin >> price;
+
+		cout << "Введите дату поступления в аптеку ";
+		arrival = getDate();
+		
+		cout << "Введите срок хранения: ";
+		cin >> shelfLife;
+	}
 public:
 	Med() {
 		farmNum = 0;
